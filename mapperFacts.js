@@ -20,6 +20,7 @@
     this.resultFacts = [];
     this.toObjectCache = [];
     this.toMapCache = {};
+    this.factObjCache = {};
 
     validateEntries(schema, facts);
 
@@ -170,8 +171,20 @@
   }
 
   function objectFact(chave, ativo) {
+    if (this.factObjCache.hasOwnProperty("chave")) {
+      let objCopy = copyObject(this.factObjCache);
+      objCopy.chave = chave;
+      objCopy.ativo = ativo;
+      return objCopy;
+    } else {
+      createFactObjCache.apply(this);
+      return objectFact.call(this, chave, ativo);
+    }
+  }
+
+  function createFactObjCache() {
     let obj = {
-      chave, ativo
+      chave: '', ativo: false
     };
     let schemaPropertys = Object.entries(this.SCHEMA);
     let total = schemaPropertys.length;
@@ -181,6 +194,7 @@
       obj[property] = cardinality === CARDINALITY.ONE ? '' : [];
     }
 
+    this.factObjCache = obj;
     return obj;
   }
 
@@ -197,3 +211,4 @@
 
   global.MapperFacts = MapperFacts;
 })(this || {});
+
