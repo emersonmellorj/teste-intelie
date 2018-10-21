@@ -67,7 +67,7 @@ Resultado esperado para este exemplo (mas não precisa ser nessa ordem):
 ];
 ```
 
-## Após classe mapper
+## Após processar os dados
 Depois da lista passar pelo processamento e estar pronta, a classe oferece 3 saídas que resultam abaixo no console do NodeJS abrindo o arquivo em ```./node/desafio_node.js``` ou abrindo o arquivo ```index.html``` no navegador que irá mostrar os resultados abaixo tanto no console quanto no browser.
 
 Método **toList**
@@ -86,16 +86,16 @@ Método **toListObject**
 ```javascript
 [
   {
-    "key":"gabriel",
-    "active":true,
-    "address":"av rio branco, 109",
-    "telphones":["98888-1111","56789-1010"]
+    "chave":"gabriel",
+    "ativo":true,
+    "endereço":"av rio branco, 109",
+    "telefone":["98888-1111","56789-1010"]
   },
   {
-    "key":"joão",
-    "active":true,
-    "address":"rua bob, 88",
-    "telphones":["234-5678","91234-5555"]
+    "chave":"joão",
+    "ativo":true,
+    "endereço":"rua bob, 88",
+    "telefone":["234-5678","91234-5555"]
   }
 ]
 ```
@@ -104,14 +104,17 @@ Método **toMap**
 ```javascript
 {
   "gabriel":{
-    "active":true,
-    "address":"av rio branco, 109",
-    "telphones":["98888-1111","56789-1010"]
+    "ativo":true,
+    "endereço":"av rio branco, 109",
+    "telefone":["98888-1111","56789-1010"]
   },
   "joão":{
-    "active":true,
-    "address":"rua bob, 88",
-    "telphones":["234-5678","91234-5555"]
+    "ativo":true,
+    "endereço":"rua bob, 88",
+    "telefone":["234-5678","91234-5555"]
   }
 }
 ```
+
+## Teste
+Dentro da pasta test tem o arquivo ```SpecRunner.html``` que ao rodar no navegador irá apresentar os resultados esperados pelo teste

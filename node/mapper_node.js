@@ -1,2 +1,2 @@
-let mapper = require('../src/js/mapper');
+let mapper = require('../mapperFacts');
 module.exports = mapper.MapperFacts;
