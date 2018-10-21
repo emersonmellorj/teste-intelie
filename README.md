@@ -116,5 +116,7 @@ Método **toMap**
 }
 ```
 
+![image](https://user-images.githubusercontent.com/4551795/47262186-0e130a80-d4b8-11e8-8ede-73834cda81a9.png)
+
 ## Teste
 Dentro da pasta test tem o arquivo ```SpecRunner.html``` que ao rodar no navegador irá apresentar os resultados esperados pelo teste
